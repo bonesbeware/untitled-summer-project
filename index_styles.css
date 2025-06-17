@@ -76,8 +76,11 @@
             align-items: center;
             margin: 10px 0;
             text-decoration: none;
-            color: rgb(52, 52, 48);
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif; 
+            font-weight: 100;
+            font-size: 18px;
+            font-style: italic;
+            color: rgb(135, 82, 30)
         }
 
         .image-grid {
