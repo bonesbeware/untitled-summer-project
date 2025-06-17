@@ -35,13 +35,7 @@
             text-align: center;
         }
 
-        .welcome {
-            text-align: center;
-            color: rgb(52, 52, 48);
-            font-family: 'Arial', sans-serif;
-            font-size: 50px;
-            font-weight: 100;
-        }
+        
         .welcome-message {
             text-align: center;
             color: rgb(52, 52, 48);
@@ -51,7 +45,6 @@
             max-width: 75%;
             margin: 0 auto;
         }
-
 
         .welcome-message a {
             color: rgb(52, 52, 48);
