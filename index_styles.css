@@ -1,90 +1,95 @@
-     body { background-color: rgb(225, 214, 199); }
+body { background-color: rgb(225, 214, 199); }
         
-        .webpage-name {
-            color: rgb(52, 52, 48);
-            font-family: Arial, sans-serif;
-            font-size: 72px;
-            font-weight: 500;
-            text-align: center;
-            margin-top: 80px;
-        }
+.webpage-name {
+    color: rgb(52, 52, 48);
+    font-family: Arial, sans-serif;
+    font-size: 72px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 80px;
+}
 
-        .row {
-            display: flex;
-            justify-content: center;
-            margin: 40px 10vw;
-        }
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 40px 10vw;
+}
 
-        .column {
-            flex: 1;
-            padding: 10px;
-        }
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1200px) {
+  .column {
+    width: 100%;
+  }
+}
         
-        .title-one,
-        .title-two {
-            color: rgb(52, 52, 48);
-            font-family: 'Arial', sans-serif;
-            font-size: 36px;
-            font-weight: 300
-        }
+.title-one,
+.title-two {
+    color: rgb(52, 52, 48);
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: 300
+}
     
-        .title-one {
-            text-align: center;
-        }
-        .title-two {
-            text-align: center;
-        }
+.title-one {
+    text-align: center;
+}
+.title-two {
+    text-align: center;
+}
 
-        
-        .welcome-message {
-            text-align: center;
-            color: rgb(52, 52, 48);
-            font-family: 'Arial', sans-serif;
-            font-size: 20px;
-            font-weight: 100;
-            max-width: 75%;
-            margin: 0 auto;
-        }
+.welcome-message {
+    text-align: center;
+    color: rgb(52, 52, 48);
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    max-width: 75%;
+    margin: 0 auto;
+}
 
-        .welcome-message a {
-            color: rgb(52, 52, 48);
-            text-decoration: none;
-            font-weight: bold;
-        }
+.welcome-message a {
+    color: rgb(52, 52, 48);
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .gallery img {
-            width: 240px;
-            height: auto;
-        }
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .musings a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px 0;
-            text-decoration: none;
-            font-family: 'Arial', sans-serif; 
-            font-weight: 100;
-            font-size: 18px;
-            font-style: italic;
-            color: rgb(135, 82, 30)
-        }
+.gallery img {
+    width: 240px;
+    height: auto;
+}
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
+.musings a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif; 
+    font-weight: 100;
+    font-size: 18px;
+    color: rgb(135, 82, 30)
+}
 
-        .image-grid img {
-            width: 100%;
-            max-width: 240px;
-            height: auto;
-        }
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.image-grid img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+}
