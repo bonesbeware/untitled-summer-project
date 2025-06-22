@@ -1,62 +1,62 @@
- body { background-color: rgb(225, 214, 199); }
+body { background-color: rgb(225, 214, 199); }
 
-    .home-button {
-        background-color: rgb(225, 214, 199);
-        color: rgb(135, 82, 30);
-        font-family: 'Arial', sans-serif;
-        font-weight: 300;
-        font-size: 24px;
-        border: none;
-        height: 36px;
-        width: 105px;
-        border-radius: 2px;
-        
-        cursor: pointer;
-        margin-left: 50%;
-        transform: translateX(-50%);
-        transition: opacity 0.15s;
-    }
-    .home-buttonn:hover {
-        opacity: 0.8;
-    }
-    .home-button:active {
-        opacity: 0.5;
-    }
-
-    .blog-title {
-        font-family: 'Arial', sans-serif; 
-        font-weight: 100;
-        font-size: 18px;
-        color: rgb(135, 82, 30);
-        margin-left: 15%;
-    }
-
-    .date {
-        font-family: 'Arial', sans-serif;
-        font-weight: 100;
-        font-size: 18px;
-        color: rgb(38, 96, 156);
-        margin-right: 15%;
-        text-align: right;
-    }
+.home-button {
+    background-color: rgb(225, 214, 199);
+    color: rgb(135, 82, 30);
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 2px;
     
-    .body-text {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 14px;
-        color: rgb(52, 52, 48);
-        line-height: 1.2;
-        margin-left: 15%;
-        margin-right: 15%;
-        text-align: justify;
-    }
+    cursor: pointer;
+    margin-left: 48%;
+    transform: translateX(-50%);
+    transition: opacity 0.15s;
+}
+.home-buttonn:hover {
+    opacity: 0.8;
+}
+.home-button:active {
+    opacity: 0.5;
+}
 
-     .prelude {
-        font-family: 'Arial', sans-serif;
-        font-size: 14px;
-        font-style: italic;
-        line-height: 1.4;
-        margin-left: 15%;
-        margin-right: 15%;
-        text-align: justify;
-        color: rgb(135, 82, 30);
-    }
+.blog-title {
+    font-family: 'Arial', sans-serif; 
+    font-weight: 100;
+    font-size: 18px;
+    color: rgb(135, 82, 30);
+    margin-left: 15%;
+}
+
+.date {
+    font-family: 'Arial', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    color: rgb(38, 96, 156);
+    margin-right: 15%;
+    text-align: right;
+}
+
+.body-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: rgb(52, 52, 48);
+    line-height: 1.2;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: justify;
+}
+
+.prelude {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.4;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: justify;
+    color: rgb(135, 82, 30);
+}
