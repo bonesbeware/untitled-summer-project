@@ -24,8 +24,12 @@ body {
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch; /* optional: ensures columns fill width */
+  }
   .column {
-    width: 100%;
+    width: 100%; /* optional: can be omitted if flex-direction is column */
   }
 }
         
