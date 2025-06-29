@@ -1,8 +1,10 @@
-body { background-color: rgb(225, 214, 199); }
+body { 
+    background-color: rgb(225, 214, 199); 
+    font-family: Arial, sans-serif;
+}
         
 .webpage-name {
-    color: rgb(52, 52, 48);
-    font-family: Arial, sans-serif;
+    color: var(--main-text-color);
     font-size: 72px;
     font-weight: 500;
     text-align: center;
@@ -21,7 +23,7 @@ body { background-color: rgb(225, 214, 199); }
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 600px) {
   .column {
     width: 100%;
   }
@@ -29,23 +31,16 @@ body { background-color: rgb(225, 214, 199); }
         
 .title-one,
 .title-two {
-    color: rgb(52, 52, 48);
-    font-family: 'Arial', sans-serif;
+    color: var(--main-text-color);
     font-size: 36px;
-    font-weight: 300
-}
-    
-.title-one {
-    text-align: center;
-}
-.title-two {
+    font-weight: 300;
     text-align: center;
 }
 
 .welcome-message {
     text-align: center;
-    color: rgb(52, 52, 48);
-    font-family: 'Arial', sans-serif;
+    color: var(--main-text-color);
+
     font-size: 20px;
     font-weight: 100;
     max-width: 75%;
@@ -53,7 +48,7 @@ body { background-color: rgb(225, 214, 199); }
 }
 
 .welcome-message a {
-    color: rgb(52, 52, 48);
+    color: var(--main-text-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -75,7 +70,6 @@ body { background-color: rgb(225, 214, 199); }
     align-items: center;
     margin: 10px 0;
     text-decoration: none;
-    font-family: 'Arial', sans-serif; 
     font-weight: 100;
     font-size: 18px;
     color: rgb(135, 82, 30)
@@ -90,6 +84,10 @@ body { background-color: rgb(225, 214, 199); }
 
 .image-grid img {
     width: 100%;
-    max-width: 240px;
+    max-width: 270px;
     height: auto;
+}
+
+:root {
+    --main-text-color: rgb(52, 52, 48);
 }
