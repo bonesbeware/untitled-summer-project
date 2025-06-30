@@ -143,23 +143,41 @@ body {
     opacity: 0;
 }
 
-/* Responsive header layout for mobile */
-@media (max-width: 600px) {
+/* --- Custom Mobile Layout --- */
+@media (max-width: 700px) {
     .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         height: auto;
         padding-bottom: 10px;
+        gap: 0;
+    }
+    .home-button {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 20px;
+        height: 40px;
     }
     .webpage-name {
         position: static;
+        left: auto;
         transform: none;
-        font-size: 2rem;
-        margin-top: 10px;
-        margin-left: 10px;
+        font-size: 2.2rem;
+        text-align: center;
+        margin: 0 0 10px 0;
+        width: 100%;
+        word-break: break-word;
     }
-    .home-button {
-        margin-left: 10px;
-        margin-bottom: 10px;
+}
+
+/* Optional: Make images more responsive on mobile */
+@media (max-width: 700px) {
+    .mySlides img {
+        width: 95% !important;
+        max-width: 400px;
+    }
+    .thumbnail {
+        width: 50px;
     }
 }
