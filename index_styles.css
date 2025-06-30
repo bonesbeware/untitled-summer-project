@@ -72,11 +72,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
+    margin: 16px 0;
     text-decoration: none;
     font-weight: 100;
     font-size: 18px;
-    color: rgb(135, 82, 30)
+    color: rgb(135, 82, 30);
+}
+
+.musings a:hover {
+    transform: scale(1.07);
 }
 
 .image-grid {
@@ -84,6 +88,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-items: center;
+    /* Add position: relative to allow absolute positioning of overlays */
     position: relative;
 }
 
@@ -96,22 +101,25 @@ body {
     transition: filter 0.3s, transform 0.3s;
 }
 
+/* Add overlay using a pseudo-element */
 .image-grid img::after {
     content: "";
     display: block;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(52, 52, 48, 0.4);
+    background: rgba(52, 52, 48, 0.4); /* semi-transparent grey */
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s;
 }
 
+/* When any image is hovered, add overlay to all other images */
 .image-grid:hover img:not(:hover) {
     filter: grayscale(25%) brightness(0.9);
     transform: scale(0.95);
 }
 
+/* Optional: keep hovered image normal and scale up */
 .image-grid img:hover {
     transform: scale(1.1);
     filter: none;
