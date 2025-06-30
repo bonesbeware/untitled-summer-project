@@ -1,62 +1,91 @@
-body { background-color: rgb(225, 214, 199); }
+body {
+    background-color: rgb(225, 214, 199);
+    padding-bottom: 10vh;
+    font-family: 'Arial', sans-serif;
+}
 
+/* Utility class for consistent side margins */
+.side-margins {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* Home button styling */
 .home-button {
     background-color: rgb(225, 214, 199);
-    color: rgb(135, 82, 30);
-    font-family: 'Arial', sans-serif;
+    color: rgb(52, 52, 48);
     font-weight: 300;
     font-size: 24px;
     border: none;
     height: 36px;
     width: 105px;
     border-radius: 2px;
-    
     cursor: pointer;
     margin-left: 48%;
     transform: translateX(-50%);
-    transition: opacity 0.15s;
+    transition: opacity 0.3s, transform 0.3s;
 }
-.home-buttonn:hover {
+.home-button:hover {
     opacity: 0.8;
+    transform: translateX(-50%) scale(1.2);
 }
 .home-button:active {
     opacity: 0.5;
 }
 
+/* Blog title */
 .blog-title {
-    font-family: 'Arial', sans-serif; 
     font-weight: 100;
     font-size: 18px;
     color: rgb(135, 82, 30);
-    margin-left: 15%;
+    /* Add side-margins class in HTML for margin */
 }
 
+/* Date */
 .date {
-    font-family: 'Arial', sans-serif;
     font-weight: 100;
     font-size: 18px;
     color: rgb(38, 96, 156);
-    margin-right: 15%;
     text-align: right;
+    /* Add side-margins class in HTML for margin */
 }
 
+/* Body text */
 .body-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
     color: rgb(52, 52, 48);
     line-height: 1.2;
-    margin-left: 15%;
-    margin-right: 15%;
     text-align: justify;
+    /* Add side-margins class in HTML for margin */
 }
 
+/* Prelude */
 .prelude {
-    font-family: 'Arial', sans-serif;
     font-size: 14px;
     font-style: italic;
     line-height: 1.4;
-    margin-left: 15%;
-    margin-right: 15%;
-    text-align: justify;
     color: rgb(135, 82, 30);
+    text-align: justify;
+    /* Add side-margins class in HTML for margin */
+}
+
+/* Navigation buttons */
+.nav-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(52, 52, 48);
+    font-size: 2.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav-left {
+    left: 2vw;
+}
+.nav-right {
+    right: 2vw;
+}
+.nav-button:hover {
+    transform: translateY(-50%) scale(1.2);
 }
