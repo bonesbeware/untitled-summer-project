@@ -6,8 +6,8 @@ body {
 
 /* Utility class for consistent side margins */
 .side-margins {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /* Home button styling */
@@ -93,38 +93,38 @@ body {
 /* --- Mobile Optimisation --- */
 @media (max-width: 700px) {
     .side-margins {
-        margin-left: 4vw;
-        margin-right: 4vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
     }
     .home-button {
         margin-left: 0;
         transform: none;
         width: 100%;
-        font-size: 20px;
-        height: 40px;
-        margin-bottom: 12px;
+        font-size: 22px;
+        height: 44px;
+        margin-bottom: 16px;
     }
     .blog-title,
     .date {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         text-align: left;
         margin: 0;
     }
     .body-text,
     .prelude {
-        font-size: 1rem;
-        line-height: 1.5;
+        font-size: 1.15rem;
+        line-height: 1.7;
     }
     .nav-button {
-        font-size: 2rem;
+        font-size: 2.2rem;
         top: auto;
-        bottom: 10px;
+        bottom: 14px;
         transform: none;
     }
     .nav-left {
-        left: 10px;
+        left: 14px;
     }
     .nav-right {
-        right: 10px;
+        right: 14px;
     }
 }
