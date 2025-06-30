@@ -22,17 +22,6 @@ body {
     padding: 10px;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .row {
-    flex-direction: column;
-    align-items: stretch; /* optional: ensures columns fill width */
-  }
-  .column {
-    width: 100%; /* optional: can be omitted if flex-direction is column */
-  }
-}
-        
 .title-one,
 .title-two {
     color: var(--main-text-color);
@@ -127,4 +116,49 @@ body {
 
 :root {
     --main-text-color: rgb(52, 52, 48);
+}
+
+/* Responsive layout - mobile styles */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 20px 2vw;
+  }
+  .column {
+    width: 100%;
+  }
+  .webpage-name {
+    font-size: 2.2rem;
+    margin-top: 32px;
+    word-break: break-word;
+    padding: 0 2vw;
+  }
+  .title-one,
+  .title-two {
+    font-size: 1.3rem;
+    padding: 0 2vw;
+  }
+  .welcome-message {
+    font-size: 1rem;
+    max-width: 98%;
+    padding: 0 2vw;
+  }
+  .gallery img,
+  .image-grid img {
+    max-width: 95vw;
+    width: 100%;
+    min-width: 0;
+  }
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .musings a {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  .row {
+    margin: 20px 2vw;
+  }
 }
