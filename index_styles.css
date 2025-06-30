@@ -125,6 +125,13 @@ body {
     align-items: stretch;
     margin: 20px 2vw;
   }
+  /* Reorder musings above gallery */
+  .musings {
+    order: -1;
+  }
+  .gallery {
+    order: 1;
+  }
   .column {
     width: 100%;
   }
@@ -149,10 +156,19 @@ body {
     max-width: 95vw;
     width: 100%;
     min-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .image-grid {
     grid-template-columns: 1fr;
     gap: 12px;
+    justify-items: center;
+  }
+  /* Disable scale up on mobile */
+  .image-grid img:hover {
+    transform: none;
+    filter: none;
   }
   .musings a {
     font-size: 1rem;
