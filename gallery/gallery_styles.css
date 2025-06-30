@@ -1,8 +1,11 @@
-body { background-color: rgb(225, 214, 199); }
+body {
+    background-color: rgb(225, 214, 199);
+    font-family: 'Arial', sans-serif;
+}
 
 .header {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     position: relative;
     height: 100px;
@@ -13,45 +16,37 @@ body { background-color: rgb(225, 214, 199); }
 .home-button {
     background-color: rgb(225, 214, 199);
     color: rgb(135, 82, 30);
-    font-family: 'Arial', sans-serif;
     font-weight: 300;
     font-size: 24px;
     border: none;
-    height: 40px;
-    width: 120px;
+    height: 36px;
+    width: 105px;
     border-radius: 2px;
     cursor: pointer;
-    transition: opacity 0.15s;
     margin-left: 25px;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: opacity 0.3s, transform 0.3s;
 }
-
 .home-button:hover {
     opacity: 0.8;
-    color: rgb(225, 214, 199);
-    background-color: rgb(135, 82, 30);
+    transform: scale(1.2);
 }
+.home-button:active {
+    opacity: 0.5;
+}
+
 /* CENTER: Webpage title */
 .webpage-name {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     color: rgb(52, 52, 48);
-    font-family: Arial, sans-serif;
     font-size: 72px;
     font-weight: 500;
 }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: center;
-}
+/* Hide the images by default - handled by JS, so this can be removed if not needed */
 
-/* Hide the images by default */
-.mySlides :first-child {
-  display: block;
-}
-
+/* Center images in slides */
 .mySlides img {
     display: block;
     margin-left: auto;
@@ -60,7 +55,7 @@ body { background-color: rgb(225, 214, 199); }
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* Next & previous buttons */
@@ -78,104 +73,72 @@ body { background-color: rgb(225, 214, 199); }
     font-size: 40px;
     user-select: none;
     -webkit-user-select: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
-
 .prev {
     left: 10px;
 }
-
-/* Position the "next button" to the right */
 .next {
     right: 10px;
 }
-
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-    color: rgb(225, 214, 199);
-    background-color: rgb(52, 52, 48);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+    transform: scale(1.2);
 }
 
 /* Container for image text */
 .caption-container {
-  text-align: center;
-  padding: 2px 16px;
-  color: rgb(52, 52, 48);
-  font-size: 24px;
-  font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2px 16px;
+    color: rgb(52, 52, 48);
+    font-size: 24px;
 }
 
+/* Thumbnail ribbon */
 .ribbon-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  white-space: nowrap;
-  padding: 10px 0;
-  scroll-behavior: smooth;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .thumbnail {
-  flex: 0 0 auto;
-  width: 80px;
-  cursor: pointer;
-  scroll-snap-align: center;
-  transition: transform 0.3s ease;
-  opacity: 0.6;
+    flex: 0 0 auto;
+    width: 80px;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.6;
 }
-
-.thumbnail.active {
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-
-/* Default state: thumbnail image dimmed */
-.demo {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+.thumbnail.active,
+.thumbnail:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 /* Wrapper setup for grey overlay */
 .thumb-wrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 }
-
-/* Grey transparent overlay for inactive thumbnails */
 .thumb-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(139, 139, 139, 0.4);
-  opacity: 1; /* visible by default */
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 139, 139, 0.4);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
-
-/* Remove grey overlay for active thumbnail */
 .thumb-wrapper.active::after {
-  opacity: 0;
-}
-
-/* On hover or if active, make image fully opaque */
-.thumb-wrapper.active .demo,
-.demo:hover {
-  opacity: 1;
+    opacity: 0;
 }
