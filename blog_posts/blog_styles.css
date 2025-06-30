@@ -89,3 +89,42 @@ body {
 .nav-button:hover {
     transform: translateY(-50%) scale(1.2);
 }
+
+/* --- Mobile Optimisation --- */
+@media (max-width: 700px) {
+    .side-margins {
+        margin-left: 4vw;
+        margin-right: 4vw;
+    }
+    .home-button {
+        margin-left: 0;
+        transform: none;
+        width: 100%;
+        font-size: 20px;
+        height: 40px;
+        margin-bottom: 12px;
+    }
+    .blog-title,
+    .date {
+        font-size: 1.1rem;
+        text-align: left;
+        margin: 0;
+    }
+    .body-text,
+    .prelude {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .nav-button {
+        font-size: 2rem;
+        top: auto;
+        bottom: 10px;
+        transform: none;
+    }
+    .nav-left {
+        left: 10px;
+    }
+    .nav-right {
+        right: 10px;
+    }
+}
