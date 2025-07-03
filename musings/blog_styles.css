@@ -93,20 +93,20 @@ body {
 /* --- Mobile Optimisation --- */
 @media (max-width: 700px) {
     .side-margins {
-        margin-left: 4vw;
-        margin-right: 4vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
     }
     .home-button {
         margin-left: 0;
         transform: none;
         width: 100%;
-        font-size: 2rem;           /* Larger text */
-        height: 56px;              /* Taller button */
+        font-size: 2rem; 
+        height: 60px;
         margin-bottom: 20px;
-        display: flex;             /* Flex for horizontal alignment */
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12px;                 /* Space between arrow and text */
+        gap: 12px;
         padding: 0;
     }
     .home-button > * {
@@ -114,26 +114,32 @@ body {
     }
     .blog-title,
     .date {
-        font-size: 2rem;           /* Bigger than body text */
+        font-size: 1rem;
         text-align: left;
         margin: 0;
+        line-height: 1.2;
     }
     .body-text,
     .prelude {
-        font-size: 1.25rem;        /* Slightly larger for readability */
+        font-size: 0.85rem;
         line-height: 1.7;
     }
     .nav-button {
-        font-size: 3rem;           /* Larger navigation arrows */
-        top: auto;
-        bottom: 24px;
-        transform: none;
-        padding: 0 10px;
+        font-size: 2rem;
+        position: fixed;
+        top: 50%;
+        bottom: auto;
+        left: 5px;
+        right: 5px;
+        transform: translateY(-50%);
+        padding: 0 18px;
     }
     .nav-left {
-        left: 32px;                /* Further from edge */
+        left: 0px;
+        right: auto;
     }
     .nav-right {
-        right: 32px;               /* Further from edge */
+        right: 0px;
+        left: auto;
     }
 }
