@@ -1,20 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const totalImages = 20;
   const visibleCount = 11;
   let currentIndex = 0;
+  let imageList = [];
+  let totalImages = 0;
 
   const ribbon = document.getElementById("thumbnailRibbon");
-  const slides = document.getElementsByClassName("mySlides");
   const captionText = document.getElementById("caption");
 
-  // Use data from HTML thumbnails for image src and alt
-  const thumbnailsHTML = document.querySelectorAll("#thumbnailRibbon .thumbnail");
-  const imageList = Array.from(thumbnailsHTML).map(img => ({
-    src: img.src,
-    alt: img.alt
-  }));
-
   function updateMainDisplay() {
+    const slides = document.getElementsByClassName("mySlides");
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
@@ -22,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slides[currentIndex].style.display = "block";
     }
     if (captionText && imageList[currentIndex]) {
-      captionText.innerText = imageList[currentIndex].alt;
+      captionText.innerText = imageList[currentIndex].caption;
     }
   }
 
@@ -37,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const index = getWrappedIndex(currentIndex + offset);
       const img = document.createElement("img");
       img.src = imageList[index].src;
-      img.alt = imageList[index].alt;
+      img.alt = imageList[index].caption;
       img.className = "thumbnail";
       img.style.transition = "transform 0.4s ease, opacity 0.4s ease";
 
@@ -71,6 +65,42 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCarousel();
   };
 
-  updateMainDisplay();
-  renderCarousel();
+  function getGalleryName() {
+    const params = new URLSearchParams(window.location.search);
+    // Allow both 'america' and 'vietnam' as valid galleries, default to 'america'
+    const gallery = params.get('gallery');
+    if (gallery === 'vietnam' || gallery === 'america') {
+      return gallery;
+    }
+    return 'america';
+  }
+
+  const galleryName = getGalleryName();
+  fetch(`${galleryName}.json`)
+    .then(response => response.json())
+    .then(images => {
+      const slideshow = document.getElementById('slideshow-container');
+
+      // Clear any existing slides
+      slideshow.innerHTML = '';
+      ribbon.innerHTML = '';
+
+      // Store image data for navigation
+      imageList = images;
+      totalImages = images.length;
+
+      images.forEach((img, i) => {
+        // Slides
+        const slide = document.createElement('div');
+        slide.className = 'mySlides fade';
+        slide.style.display = 'none'; // Hide all slides initially
+        slide.innerHTML = `<img src="${img.src}" style="width:${img.width}">`;
+        slideshow.appendChild(slide);
+      });
+
+      // Show the first slide and render the ribbon
+      currentIndex = 0;
+      updateMainDisplay();
+      renderCarousel();
+    });
 });
