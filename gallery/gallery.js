@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const visibleCount = 11;
+  // Dynamically set visibleCount based on screen width
+  let visibleCount = window.innerWidth <= 600 ? 5 : 11; // 5 for mobile, 11 for desktop
+
   let currentIndex = 0;
   let imageList = [];
   let totalImages = 0;
@@ -67,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getGalleryName() {
     const params = new URLSearchParams(window.location.search);
-    // Allow both 'america' and 'vietnam' as valid galleries, default to 'america'
+    // Allow 'america', 'vietnam', and 'australia' as valid galleries, default to 'america'
     const gallery = params.get('gallery');
-    if (gallery === 'vietnam' || gallery === 'america') {
+    if (gallery === 'vietnam' || gallery === 'america' || gallery === 'australia') {
       return gallery;
     }
     return 'america';
@@ -103,4 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
       updateMainDisplay();
       renderCarousel();
     });
+
+  // Optionally, update visibleCount on window resize
+  window.addEventListener("resize", () => {
+    visibleCount = window.innerWidth <= 600 ? 5 : 11;
+    renderCarousel();
+  });
 });
