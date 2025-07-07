@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     // Allow 'america', 'vietnam', and 'australia' as valid galleries, default to 'america'
     const gallery = params.get('gallery');
-    if (gallery === 'vietnam' || gallery === 'america' || gallery === 'australia') {
+    if (gallery === 'vietnam' || gallery === 'america' || gallery === 'australia' || gallery === 'newzealand') {
       return gallery;
     }
     return 'america';
