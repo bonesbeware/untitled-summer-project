@@ -54,6 +54,15 @@ body {
     font-weight: bold;
 }
 
+.contact-button {
+    display: inline-block;
+    padding: 8px 16px;
+    color: rgb(38, 96, 156) !important;
+    background-color: transparent; /* Add this line */
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold !important;
+}
+
 .gallery {
     display: flex;
     flex-direction: column;
