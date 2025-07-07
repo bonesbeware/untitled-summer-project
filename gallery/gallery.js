@@ -38,11 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.transition = "transform 0.4s ease, opacity 0.4s ease";
 
       const distance = Math.abs(offset);
-      const scale = 1 - (distance * 0.08);
+      const scale = 1 - (distance * 0.15);
       const opacity = 1 - (distance * 0.15);
 
       img.style.transform = `scale(${scale})`;
       img.style.opacity = `${Math.max(opacity, 0.6)}`;
+      
+      // Add negative margin to bring smaller images closer
+      if (distance > 0) {
+        const marginReduction = distance * 6; // Adjust this value as needed
+        img.style.marginLeft = `-${marginReduction}px`;
+        img.style.marginRight = `-${marginReduction}px`;
+      }
 
       if (offset === 0) img.classList.add("active");
 
