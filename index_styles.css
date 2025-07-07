@@ -22,6 +22,14 @@ body {
     padding: 10px;
 }
 
+.column:first-child {
+    flex: 3; /* Gallery column - 75% */
+}
+
+.column:last-child {
+    flex: 1; /* Musings column - 25% */
+}
+
 .title-one,
 .title-two {
     color: var(--main-text-color);
@@ -53,7 +61,8 @@ body {
 }
 
 .gallery img {
-    width: 270px;
+    width: 100%;
+    max-width: 400px; /* Increased from 270px */
     height: auto;
 }
 
@@ -75,15 +84,14 @@ body {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 30px; /* Increased from 20px */
     justify-items: center;
-    /* Add position: relative to allow absolute positioning of overlays */
     position: relative;
 }
 
 .image-grid img {
     width: 100%;
-    max-width: 270px;
+    max-width: 400px; /* Increased from 270px */
     height: auto;
     position: relative;
     z-index: 1;
@@ -122,10 +130,10 @@ body {
   color: rgb(225, 214, 199);
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s; /* Add transform to transition */
-  font-size: 1.2rem;
+  font-size: 2rem;
   pointer-events: none;
   z-index: 2;
-  padding: 12px 16px;
+  padding: 16px 16px;
 }
 
 .image-item:hover .img-overlay {
