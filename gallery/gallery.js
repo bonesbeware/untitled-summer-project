@@ -76,9 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getGalleryName() {
     const params = new URLSearchParams(window.location.search);
-    // Allow 'america', 'vietnam', and 'australia' as valid galleries, default to 'america'
+    // Allow 'america', 'vietnam', 'australia', 'newzealand' and 'wildwest' as valid galleries, default to 'america'
     const gallery = params.get('gallery');
-    if (gallery === 'vietnam' || gallery === 'america' || gallery === 'australia' || gallery === 'newzealand') {
+    if (
+      gallery === 'vietnam' ||
+      gallery === 'america' ||
+      gallery === 'australia' ||
+      gallery === 'newzealand' ||
+      gallery === 'wildwest'
+    ) {
       return gallery;
     }
     return 'america';
@@ -86,7 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const galleryName = getGalleryName();
   fetch(`${galleryName}.json`)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${galleryName}.json`);
+      }
+      return response.json();
+    })
     .then(images => {
       const slideshow = document.getElementById('slideshow-container');
 
@@ -111,6 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
       currentIndex = 0;
       updateMainDisplay();
       renderCarousel();
+    })
+    .catch(error => {
+      console.error("Gallery loading error:", error);
     });
 
   // Optionally, update visibleCount on window resize
@@ -119,3 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCarousel();
   });
 });
+    renderCarousel();
